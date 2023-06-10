@@ -1,0 +1,40 @@
+Implement a program to generate tribanocci sequence upto given number
+Input Format
+an integer value
+Constraints
+no
+Output Format
+trib seq upto n
+Sample Input 0
+3
+Sample Output 0
+0 1 2
+Sample Input 1
+4
+Sample Output 1
+0 1 2 3
+
+
+import java.io.*;
+import java.util.*;
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+        int[] tribonacci = new int[n];
+        tribonacci[0] = 0;
+        tribonacci[1] = 1;
+        tribonacci[2] = 2;
+        for (int i = 3; i < n; i++) 
+        {
+            tribonacci[i] = tribonacci[i - 1] + tribonacci[i - 2] + tribonacci[i - 3];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            System.out.print(tribonacci[i] + " ");
+        }
+    }
+}
