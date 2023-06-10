@@ -1,0 +1,59 @@
+Implement a program to reverse each element in the matrix.
+Input Format
+a 3x3 matrix
+Constraints
+no
+Output Format
+result matrix
+Sample Input 0
+1 2 3
+4 5 6
+7 8 9
+Sample Output 0
+1 2 3
+4 5 6
+7 8 9
+Sample Input 1
+11 12 13
+14 15 16
+17 18 19
+Sample Output 1
+11 21 31
+41 51 61
+71 81 91
+
+
+import java.io.*;
+import java.util.*;
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        int[][] matrix = new int[3][3];
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) 
+        {
+            for (int j = 0; j < 3; j++) 
+            {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        int[][] result = new int[3][3];
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                String reversedElement = new StringBuilder(String.valueOf(matrix[i][j])).reverse().toString();
+                result[i][j] = Integer.parseInt(reversedElement);
+            }
+        }
+        for (int i = 0; i < 3; i++) 
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
