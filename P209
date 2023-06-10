@@ -1,0 +1,52 @@
+Implement a program to check whether an array is paliandrome or not.
+Input Format
+Array size N and Array Elements
+Constraints
+no
+Output Format
+true or false
+Sample Input 0
+5
+1 2 3 2 1
+Sample Output 0
+true
+Sample Input 1
+4
+10 11 12 13
+Sample Output 1
+false
+
+
+import java.util.Scanner;
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = sc.nextInt();
+        }
+        boolean isPalindrome = checkPalindrome(a);
+        
+        System.out.println(isPalindrome);
+    }
+    public static boolean checkPalindrome(int[] a)
+    {
+        int left = 0;
+        int right = a.length - 1;
+        
+        while (left < right) 
+        {
+            if (a[left] != a[right]) 
+            {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
